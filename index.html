@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Demo Bank. Explore checking and savings accounts, home mortgages, equity loans, and personal insurance solutions built around you.">
+  <title>Demo Bank | Banking Designed for Your Future</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-link" id="header-logo-link">
+        <img src="logo.png" alt="Demo Bank Logo" class="logo-img">
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Checking</a></li>
+          <li><a href="#" class="nav-link">Savings</a></li>
+          <li><a href="mortgage.html" class="nav-link">Mortgage Loans</a></li>
+          <li><a href="equity.html" class="nav-link">Home Equity Loans</a></li>
+          <li><a href="#" class="nav-link">Insurance</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search" id="nav-search-trigger">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <a href="#" class="btn btn-secondary btn-sm" id="btn-login-header">Log In</a>
+        <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary btn-sm" id="btn-apply-header">Apply Now</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open Navigation Menu" id="mobile-menu-trigger">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button class="mobile-nav-close" aria-label="Close Navigation Menu" id="mobile-menu-close">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="mobile-menu">
+      <li><a href="#" class="mobile-nav-link">Checking</a></li>
+      <li><a href="#" class="mobile-nav-link">Savings</a></li>
+      <li><a href="mortgage.html" class="mobile-nav-link">Mortgage Loans</a></li>
+      <li><a href="equity.html" class="mobile-nav-link">Home Equity Loans</a></li>
+      <li><a href="#" class="mobile-nav-link">Insurance</a></li>
+    </ul>
+    <div class="mobile-actions">
+      <a href="#" class="btn btn-secondary" style="width: 100%;">Log In</a>
+      <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Search Overlay Modal -->
+  <div class="search-modal" id="search-overlay">
+    <div class="search-modal-container">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-secondary)">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" placeholder="Search Demo Bank services..." class="search-input" aria-label="Search Input" id="search-input-field">
+      <button class="search-close-btn" aria-label="Close Search" id="search-close-trigger">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="backdrop" id="backdrop-overlay"></div>
+
+  <!-- Main Hero Container -->
+  <section class="hero" id="home-hero">
+    <div class="container split-layout">
+      <div class="hero-content">
+        <span class="microcopy">WELCOME TO DEMO BANK</span>
+        <h1 class="hero-title">Banking Designed for Your Future</h1>
+        <p class="hero-subtitle">Experience smarter solutions for saving, lending, and budgeting. Access cutting-edge digital management tools paired with local service advisors who care.</p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#" class="btn btn-primary" id="btn-home-apply">View Account Plans</a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img src="bank_home.png" alt="Premium Modern Bank Lobby and Consultation Area" class="hero-img-graphic">
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Access Segment (Slightly below fold) -->
+  <section class="section-alternate" id="home-features" style="padding: 60px 0;">
+    <div class="container" style="padding: 0;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        
+        <!-- Checking & Savings -->
+        <div class="specialty-card" style="padding: 30px;">
+          <div>
+            <span class="microcopy" style="color: var(--action-orange);">DAILY BANKING</span>
+            <h3 style="font-size: 1.25rem; margin: 10px 0;">Checking & Savings</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 20px;">Open high-yield savings accounts or premium checking with zero maintenance fees and global ATM access.</p>
+          </div>
+          <a href="#" class="btn btn-secondary btn-sm" style="align-self: flex-start;">View Account Plans</a>
+        </div>
+
+        <!-- Mortgage Loans -->
+        <div class="specialty-card" style="padding: 30px;">
+          <div>
+            <span class="microcopy">HOME FINANCING</span>
+            <h3 style="font-size: 1.25rem; margin: 10px 0;">Mortgage Loans</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 20px;">Ready to purchase or refinance? Get pre-qualified quickly with our local lending specialists.</p>
+          </div>
+          <a href="mortgage.html" class="btn btn-secondary btn-sm" style="align-self: flex-start;">Mortgage Lending</a>
+        </div>
+
+        <!-- Home Equity -->
+        <div class="specialty-card" style="padding: 30px;">
+          <div>
+            <span class="microcopy">EQUITY DRAW</span>
+            <h3 style="font-size: 1.25rem; margin: 10px 0;">HELOC & Equity Loans</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 20px;">Use your home’s value to fund renovations, consolidation, or emergencies at flexible interest rates.</p>
+          </div>
+          <a href="equity.html" class="btn btn-secondary btn-sm" style="align-self: flex-start;">HELOC Options</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logo.png" alt="Demo Bank Footer Logo" class="footer-logo">
+          <p>Your trusted financial partner for residential mortgages, consumer lending, and asset management.</p>
+          <p style="font-size: 0.85rem;"><strong>Main Office:</strong><br>100 Financial Center Parkway, Suite 400<br>New York, NY 10005</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="#">Checking Accounts</a></li>
+            <li><a href="#">Savings Accounts</a></li>
+            <li><a href="mortgage.html">Mortgage Loans</a></li>
+            <li><a href="equity.html">Home Equity Lines</a></li>
+            <li><a href="#">Insurance Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="directory.html">Find a Loan Officer</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy & Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory & Contact</h4>
+          <p style="font-size: 0.85rem;"><strong>Customer Support:</strong><br>Phone: (800) 555-0199<br>Fax: (800) 555-0198<br>Email: customercare@demobank.com</p>
+          <p style="font-size: 0.85rem;"><strong>Routing Transitions:</strong><br>Routing No: 999999990<br>Account Query Dummy: 0000-0000-00</p>
+        </div>
+      </div>
+
+      <div class="footer-disclaimers">
+        Demo Bank is a fictional financial institution created for demonstration purposes only. Dummy accounts, routing numbers, and rates displayed do not correspond to active financial instruments. Equal Housing Lender. NMLS Registry License #987654. Subject to credit validation. FDIC Member.
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Demo Bank. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

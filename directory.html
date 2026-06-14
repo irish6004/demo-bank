@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with Demo Bank's home lending experts. Filter by name or NMLS number and apply directly with your chosen Loan Officer.">
+  <title>Loan Officer Directory | Demo Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-link" id="header-logo-link">
+        <img src="logo.png" alt="Demo Bank Logo" class="logo-img">
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Checking</a></li>
+          <li><a href="#" class="nav-link">Savings</a></li>
+          <li><a href="mortgage.html" class="nav-link">Mortgage Loans</a></li>
+          <li><a href="equity.html" class="nav-link">Home Equity Loans</a></li>
+          <li><a href="#" class="nav-link">Insurance</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search" id="nav-search-trigger">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <a href="#" class="btn btn-secondary btn-sm" id="btn-login-header">Log In</a>
+        <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary btn-sm" id="btn-apply-header">Apply Now</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open Navigation Menu" id="mobile-menu-trigger">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button class="mobile-nav-close" aria-label="Close Navigation Menu" id="mobile-menu-close">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="mobile-menu">
+      <li><a href="#" class="mobile-nav-link">Checking</a></li>
+      <li><a href="#" class="mobile-nav-link">Savings</a></li>
+      <li><a href="mortgage.html" class="mobile-nav-link">Mortgage Loans</a></li>
+      <li><a href="equity.html" class="mobile-nav-link">Home Equity Loans</a></li>
+      <li><a href="#" class="mobile-nav-link">Insurance</a></li>
+    </ul>
+    <div class="mobile-actions">
+      <a href="#" class="btn btn-secondary" style="width: 100%;">Log In</a>
+      <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Search Overlay Modal -->
+  <div class="search-modal" id="search-overlay">
+    <div class="search-modal-container">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-secondary)">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" placeholder="Search Demo Bank services..." class="search-input" aria-label="Search Input" id="search-input-field">
+      <button class="search-close-btn" aria-label="Close Search" id="search-close-trigger">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="backdrop" id="backdrop-overlay"></div>
+
+  <!-- Directory Main Section -->
+  <main class="container">
+    <div class="text-center" style="margin-bottom: 50px;">
+      <span class="section-tag">LENDING EXPERTS</span>
+      <h1>Loan Officer Directory</h1>
+      <p style="max-width: 600px; margin: 0 auto;">Search and connect directly with a dedicated loan professional to start your application today.</p>
+    </div>
+
+    <!-- Filter/Search Bar -->
+    <div class="filter-bar">
+      <div class="filter-input-wrap">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="lo-search-input" class="filter-input" placeholder="Filter by Name, NMLS#, Title, or Branch Location...">
+      </div>
+    </div>
+
+    <!-- Loan Officers Cards Grid -->
+    <div class="lo-grid" id="lo-grid-container">
+      
+      <!-- LO 1 -->
+      <div class="lo-card" data-name="Derrick Enderby" data-title="Senior Loan Officer" data-nmls="402911" data-location="Buffalo">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_1.png" alt="Derrick Enderby" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Derrick Enderby</h3>
+            <span class="lo-title">Senior Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0101
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            denderby@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402911
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Buffalo Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/derrick+demo@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/derrick+demo@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Derrick Enderby', 'Senior Loan Officer', '(555) 0101', 'denderby@demobank.com', '402911', '[INSERT_LO_CARD_1_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+      <!-- LO 2 -->
+      <div class="lo-card" data-name="Derrick McTester" data-title="Loan Officer" data-nmls="402912" data-location="Rochester">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_2.png" alt="Derrick McTester" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Derrick McTester</h3>
+            <span class="lo-title">Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0102
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            dmctester@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402912
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Rochester Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/derrick+33@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/derrick+33@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Derrick McTester', 'Loan Officer', '(555) 0102', 'dmctester@demobank.com', '402912', '[INSERT_LO_CARD_2_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+      <!-- LO 3 -->
+      <div class="lo-card" data-name="Jerry Smith" data-title="Loan Officer" data-nmls="402913" data-location="Syracuse">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_3.png" alt="Jerry Smith" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Jerry Smith</h3>
+            <span class="lo-title">Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0103
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            jsmith@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402913
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Syracuse Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/scott+jerry@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/scott+jerry@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Jerry Smith', 'Loan Officer', '(555) 0103', 'jsmith@demobank.com', '402913', '[INSERT_LO_CARD_3_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+      <!-- LO 4 -->
+      <div class="lo-card" data-name="Olga Faynshteyn" data-title="Senior Loan Officer" data-nmls="402914" data-location="New York City">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_4.png" alt="Olga Faynshteyn" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Olga Faynshteyn</h3>
+            <span class="lo-title">Senior Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0104
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            ofaynshteyn@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402914
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            New York City Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/olga+demo@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/olga+demo@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Olga Faynshteyn', 'Senior Loan Officer', '(555) 0104', 'ofaynshteyn@demobank.com', '402914', '[INSERT_LO_CARD_4_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+      <!-- LO 5 -->
+      <div class="lo-card" data-name="Patrick O'Brien" data-title="Loan Officer" data-nmls="402915" data-location="Albany">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_5.png" alt="Patrick O'Brien" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Patrick O'Brien</h3>
+            <span class="lo-title">Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0105
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            pobrien@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402915
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Albany Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/patrick+demo@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/patrick+demo@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Patrick O\'Brien', 'Loan Officer', '(555) 0105', 'pobrien@demobank.com', '402915', '[INSERT_LO_CARD_5_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+      <!-- LO 6 -->
+      <div class="lo-card" data-name="Samantha Loanwell" data-title="Senior Loan Officer" data-nmls="402916" data-location="Boston">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_6.png" alt="Samantha Loanwell" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Samantha Loanwell</h3>
+            <span class="lo-title">Senior Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0106
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            sloanwell@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402916
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Boston Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/engineering+demobank@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/engineering+demobank@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Samantha Loanwell', 'Senior Loan Officer', '(555) 0106', 'sloanwell@demobank.com', '402916', '[INSERT_LO_CARD_6_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+      <!-- LO 7 -->
+      <div class="lo-card" data-name="Scott Falbo" data-title="Senior Loan Officer" data-nmls="402917" data-location="Ithaca">
+        <div class="lo-header">
+          <div class="lo-avatar"><img src="avatars/lo_7.png" alt="Scott Falbo" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2;"></div>
+          <div class="lo-info-header">
+            <h3 class="lo-name">Scott Falbo</h3>
+            <span class="lo-title">Senior Loan Officer</span>
+          </div>
+        </div>
+        <ul class="lo-details">
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (555) 0107
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            sfalbo@demobank.com
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            NMLS # 402917
+          </li>
+          <li>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ithaca Branch
+          </li>
+        </ul>
+        <div class="lo-actions">
+          <a href="https://dev.lenderlogix.com/apply-now/scott+demo@lenderlogix.com&application=STANDARD" class="btn btn-primary btn-sm">Apply Now</a>
+          <a href="https://dev.lenderlogix.com/apply-now/scott+demo@lenderlogix.com&application=SPANISH" class="btn btn-secondary btn-sm">Solicitar ahora</a>
+          <button onclick="openBusinessCard('Scott Falbo', 'Senior Loan Officer', '(555) 0107', 'sfalbo@demobank.com', '402917', '[INSERT_LO_CARD_7_HERE]')" class="btn btn-secondary btn-sm">Digital Business Card</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Digital Business Card Interactive Modal -->
+  <div class="modal" id="business-card-modal">
+    <div class="modal-header">
+      <h3 style="margin: 0; font-size: 1.15rem; color: var(--primary-dark-blue);">Digital Business Card</h3>
+      <button class="modal-close" aria-label="Close Business Card Modal">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Fictional Credit Card style representation -->
+      <div class="card-mockup">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+          <img src="logo.png" alt="Demo Bank Brand" class="card-logo">
+          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; background-color: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 4px; letter-spacing: 1px;">Home Lending</span>
+        </div>
+        <div class="card-lo-name">Sarah Jenkins</div>
+        <div class="card-lo-title">Senior Loan Officer</div>
+        
+        <div class="card-lo-meta" style="margin-top: 20px;">
+          <p><strong>Phone:</strong> <span class="card-phone-txt">(555) 0120</span></p>
+          <p><strong>Email:</strong> <span class="card-email-txt">sjenkins@demobank.com</span></p>
+          <p class="card-nmls-txt" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">NMLS # 402941</p>
+        </div>
+      </div>
+
+      <div class="qr-section">
+        <div class="qr-box">
+          <div class="qr-placeholder"></div>
+        </div>
+        <span class="qr-caption">Scan QR Code to save contact details</span>
+        <a href="#" class="btn btn-primary card-action-btn" style="width: 100%; margin-top: 15px;">View Digital Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logo.png" alt="Demo Bank Footer Logo" class="footer-logo">
+          <p>Your trusted financial partner for residential mortgages, consumer lending, and asset management.</p>
+          <p style="font-size: 0.85rem;"><strong>Main Office:</strong><br>100 Financial Center Parkway, Suite 400<br>New York, NY 10005</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="#">Checking Accounts</a></li>
+            <li><a href="#">Savings Accounts</a></li>
+            <li><a href="mortgage.html">Mortgage Loans</a></li>
+            <li><a href="equity.html">Home Equity Lines</a></li>
+            <li><a href="#">Insurance Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="directory.html">Find a Loan Officer</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy & Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory & Contact</h4>
+          <p style="font-size: 0.85rem;"><strong>Customer Support:</strong><br>Phone: (800) 555-0199<br>Fax: (800) 555-0198<br>Email: customercare@demobank.com</p>
+          <p style="font-size: 0.85rem;"><strong>Routing Transitions:</strong><br>Routing No: 999999990<br>Account Query Dummy: 0000-0000-00</p>
+        </div>
+      </div>
+
+      <div class="footer-disclaimers">
+        Demo Bank is a fictional financial institution created for demonstration purposes only. Dummy accounts, routing numbers, and rates displayed do not correspond to active financial instruments. Equal Housing Lender. NMLS Registry License #987654. Subject to credit validation. FDIC Member.
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Demo Bank. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

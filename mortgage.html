@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure your dream home with Demo Bank's customized mortgage options. Learn about first responder benefits, access your loan dashboard, and apply online today.">
+  <title>Mortgage Loans | Demo Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-link" id="header-logo-link">
+        <img src="logo.png" alt="Demo Bank Logo" class="logo-img">
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Checking</a></li>
+          <li><a href="#" class="nav-link">Savings</a></li>
+          <li><a href="mortgage.html" class="nav-link active">Mortgage Loans</a></li>
+          <li><a href="equity.html" class="nav-link">Home Equity Loans</a></li>
+          <li><a href="#" class="nav-link">Insurance</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search" id="nav-search-trigger">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <a href="#" class="btn btn-secondary btn-sm" id="btn-login-header">Log In</a>
+        <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary btn-sm" id="btn-apply-header">Apply Now</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open Navigation Menu" id="mobile-menu-trigger">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button class="mobile-nav-close" aria-label="Close Navigation Menu" id="mobile-menu-close">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="mobile-menu">
+      <li><a href="#" class="mobile-nav-link">Checking</a></li>
+      <li><a href="#" class="mobile-nav-link">Savings</a></li>
+      <li><a href="mortgage.html" class="mobile-nav-link">Mortgage Loans</a></li>
+      <li><a href="equity.html" class="mobile-nav-link">Home Equity Loans</a></li>
+      <li><a href="#" class="mobile-nav-link">Insurance</a></li>
+    </ul>
+    <div class="mobile-actions">
+      <a href="#" class="btn btn-secondary" style="width: 100%;">Log In</a>
+      <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Search Overlay Modal -->
+  <div class="search-modal" id="search-overlay">
+    <div class="search-modal-container">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-secondary)">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" placeholder="Search Demo Bank services..." class="search-input" aria-label="Search Input" id="search-input-field">
+      <button class="search-close-btn" aria-label="Close Search" id="search-close-trigger">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="backdrop" id="backdrop-overlay"></div>
+
+  <!-- Main Hero Container -->
+  <section class="hero" id="mortgage-hero">
+    <div class="container split-layout">
+      <div class="hero-content">
+        <span class="microcopy">HOME LENDING PLATFORM</span>
+        <h1 class="hero-title">Simplify Your Path to Homeownership</h1>
+        <p class="hero-subtitle">Whether you are buying your very first home, upgrading to a new space, or refinancing, Demo Bank offers personalized mortgage solutions with competitive rates and a digital closing process.</p>
+        <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary" id="hero-apply-btn">Apply Now</a>
+      </div>
+      <div class="hero-image-container">
+        <img src="mortgage_hero.png" alt="Premium Modern Home Exterior" class="hero-img-graphic">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Work with a Dedicated Local Lending Expert -->
+  <section class="section-alternate" id="section-find-lo">
+    <div class="container split-layout">
+      <div class="hero-image-container">
+        <img src="expert_lending.png" alt="Work with a Dedicated Local Lending Expert" class="hero-img-graphic">
+      </div>
+      <div>
+        <span class="section-tag">GUIDANCE & EXPERTISE</span>
+        <h2>Work with a Dedicated Local Lending Expert</h2>
+        <p>Mortgages are not one-size-fits-all. Our experienced Loan Officers walk you through local regulations, down payment assistance, and customized loan solutions step-by-step.</p>
+        <a href="directory.html" class="btn btn-secondary" id="find-lo-cta">Find a Loan Officer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Spanish Application -->
+  <section id="section-spanish-app">
+    <div class="container split-layout">
+      <div>
+        <span class="section-tag">SOLUCIONES EN ESPAÑOL</span>
+        <h2>¿Prefiere tramitar en español?</h2>
+        <p>En Demo Bank facilitamos su proceso de préstamo hipotecario. Contamos con oficiales de crédito bilingües y solicitudes completamente adaptadas para brindarle la mejor asesoría en su idioma nativo.</p>
+        <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=SPANISH" class="btn btn-primary" id="spanish-apply-btn">Solicitar ahora</a>
+      </div>
+      <div class="hero-image-container">
+        <img src="spanish_app.png" alt="Bilingual Lending Portal on Tablet Screen" class="hero-img-graphic">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Find My Loan Dashboard -->
+  <section class="section-alternate" id="section-find-my-loan">
+    <div class="container text-center">
+      <span class="section-tag">LOAN PROGRESS</span>
+      <h2>Find My Loan Dashboard</h2>
+      <p style="max-width: 600px; margin: 0 auto 30px;">Click here in order to find your loan dashboard</p>
+      
+      <div class="loan-lookup-card" style="padding: 30px; text-align: center;">
+        <a href="[INSERT_FIND_MY_LOAN_DASHBOARD_LINK_HERE]" class="btn btn-primary" id="btn-loan-dashboard" style="padding: 16px 40px; font-size: 1.05rem;">Find My Loan Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Specialty Programs -->
+  <section id="section-specialty">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">EXCLUSIVE PROGRAMS</span>
+        <h2>Specialty Mortgage Programs</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px;">Dedicated home financing plans tailored for specific buyer needs and municipal heroes.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1: Community Champions -->
+        <div class="specialty-card">
+          <div>
+            <span class="microcopy">LOCAL COMMITTED PROGRAM</span>
+            <h3 style="margin-top: 10px;">Community Champions</h3>
+            <p>A mortgage program created to help civilian public servants purchase homes. Structured with fixed rates, low down payment structures, and flexible credit review criteria.</p>
+            <div class="offer-callout">
+              <span class="offer-badge">BENEFIT</span>
+              <p style="margin: 0; font-weight: 600; font-size: 0.95rem; color: var(--primary-dark-blue);">Up to $5,000 credit towards closing costs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: First Responders -->
+        <div class="specialty-card">
+          <div>
+            <span class="microcopy">HEROES AT HOME</span>
+            <h3 style="margin-top: 10px;">First Responders</h3>
+            <p>Honoring firefighters, police officers, EMTs, and healthcare professionals. Featuring zero lender fee mortgages, relaxed income verification overlays, and direct local counselor assistance.</p>
+            <div class="offer-callout">
+              <span class="offer-badge">SPECIAL RATE</span>
+              <p style="margin: 0; font-weight: 600; font-size: 0.95rem; color: var(--action-orange);">0.25% interest rate discount on standard loans.</p>
+            </div>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary" style="width: 100%;" id="btn-prequal-heroes">Pre-qualify Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logo.png" alt="Demo Bank Footer Logo" class="footer-logo">
+          <p>Your trusted financial partner for residential mortgages, consumer lending, and asset management.</p>
+          <p style="font-size: 0.85rem;"><strong>Main Office:</strong><br>100 Financial Center Parkway, Suite 400<br>New York, NY 10005</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="#">Checking Accounts</a></li>
+            <li><a href="#">Savings Accounts</a></li>
+            <li><a href="mortgage.html">Mortgage Loans</a></li>
+            <li><a href="equity.html">Home Equity Lines</a></li>
+            <li><a href="#">Insurance Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="directory.html">Find a Loan Officer</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy & Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory & Contact</h4>
+          <p style="font-size: 0.85rem;"><strong>Customer Support:</strong><br>Phone: (800) 555-0199<br>Fax: (800) 555-0198<br>Email: customercare@demobank.com</p>
+          <p style="font-size: 0.85rem;"><strong>Routing Transitions:</strong><br>Routing No: 999999990<br>Account Query Dummy: 0000-0000-00</p>
+        </div>
+      </div>
+
+      <div class="footer-disclaimers">
+        Demo Bank is a fictional financial institution created for demonstration purposes only. Dummy accounts, routing numbers, and rates displayed do not correspond to active financial instruments. Equal Housing Lender. NMLS Registry License #987654. Subject to credit validation. FDIC Member.
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Demo Bank. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

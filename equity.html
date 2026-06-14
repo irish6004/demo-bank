@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leverage your home's equity with Demo Bank. Compare Home Equity Loans and Home Equity Lines of Credit (HELOC) at competitive interest rates.">
+  <title>Home Equity Loans & HELOCs | Demo Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-link" id="header-logo-link">
+        <img src="logo.png" alt="Demo Bank Logo" class="logo-img">
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">Checking</a></li>
+          <li><a href="#" class="nav-link">Savings</a></li>
+          <li><a href="mortgage.html" class="nav-link">Mortgage Loans</a></li>
+          <li><a href="equity.html" class="nav-link active">Home Equity Loans</a></li>
+          <li><a href="#" class="nav-link">Insurance</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search" id="nav-search-trigger">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <a href="#" class="btn btn-secondary btn-sm" id="btn-login-header">Log In</a>
+        <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary btn-sm" id="btn-apply-header">Apply Now</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open Navigation Menu" id="mobile-menu-trigger">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button class="mobile-nav-close" aria-label="Close Navigation Menu" id="mobile-menu-close">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="mobile-menu">
+      <li><a href="#" class="mobile-nav-link">Checking</a></li>
+      <li><a href="#" class="mobile-nav-link">Savings</a></li>
+      <li><a href="mortgage.html" class="mobile-nav-link">Mortgage Loans</a></li>
+      <li><a href="equity.html" class="mobile-nav-link">Home Equity Loans</a></li>
+      <li><a href="#" class="mobile-nav-link">Insurance</a></li>
+    </ul>
+    <div class="mobile-actions">
+      <a href="#" class="btn btn-secondary" style="width: 100%;">Log In</a>
+      <a href="https://dev.lenderlogix.com/apply-now/DemoBank&application=STANDARD" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Search Overlay Modal -->
+  <div class="search-modal" id="search-overlay">
+    <div class="search-modal-container">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-secondary)">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" placeholder="Search Demo Bank services..." class="search-input" aria-label="Search Input" id="search-input-field">
+      <button class="search-close-btn" aria-label="Close Search" id="search-close-trigger">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="backdrop" id="backdrop-overlay"></div>
+
+  <!-- Home Equity Hero Section -->
+  <section class="hero" id="equity-hero">
+    <div class="container split-layout">
+      <div class="hero-content">
+        <span class="microcopy">BORROWING AGAINST VALUE</span>
+        <h1 class="hero-title">Put Your Home's Value to Work</h1>
+        <p class="hero-subtitle">Access liquid funds for home renovations, consolidating high-interest debt, or funding education milestones with our flexible Home Equity Loans and HELOCs.</p>
+        <a href="[INSERT_HOME_EQUITY_LINK_HERE]" class="btn btn-primary" id="equity-apply-btn">Apply for Home Equity</a>
+      </div>
+      <div class="hero-image-container">
+        <img src="equity_hero.png" alt="Premium Modern Home Interior Dining and Living Area" class="hero-img-graphic">
+      </div>
+    </div>
+  </section>
+
+  <!-- Equity Benefits Section -->
+  <section class="section-alternate" id="section-equity-benefits">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 50px;">
+        <span class="section-tag">COMPARE OPTIONS</span>
+        <h2>Choose Your Borrowing Path</h2>
+        <p style="max-width: 600px; margin: 0 auto;">We offer two customizable lending structures depending on how you plan to draw and repay your home's equity.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- HELOC -->
+        <div class="specialty-card">
+          <div>
+            <span class="microcopy">FLEXIBLE LINE</span>
+            <h3 style="margin-top: 10px;">Home Equity Line of Credit (HELOC)</h3>
+            <p>Borrow as you need, pay interest only on what you draw. Ideal for ongoing projects, emergency safety nets, or staggered expenses. Features a variable interest rate tied to prime index movements.</p>
+            <div class="offer-callout">
+              <span class="offer-badge">FLEXIBILITY</span>
+              <p style="margin: 0; font-weight: 600; font-size: 0.95rem; color: var(--primary-dark-blue);">10-year draw period followed by a 20-year repayment schedule.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fixed Rate Loan -->
+        <div class="specialty-card">
+          <div>
+            <span class="microcopy">LUMP SUM LOAN</span>
+            <h3 style="margin-top: 10px;">Fixed-Rate Home Equity Loan</h3>
+            <p>Get a single lump-sum payout upon approval and closing. Ideal for large, specific costs with predictable budget needs. Lock in fixed monthly payments for stability.</p>
+            <div class="offer-callout">
+              <span class="offer-badge">STABILITY</span>
+              <p style="margin: 0; font-weight: 600; font-size: 0.95rem; color: var(--action-orange);">Predictable equal installments over selected amortization terms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section id="equity-cta-section">
+    <div class="container text-center">
+      <span class="section-tag">GET STARTED</span>
+      <h2>Calculate Your Equity Potential</h2>
+      <p style="max-width: 600px; margin: 0 auto 30px;">Speak with one of our specialized home equity loan consultants or start a quick digital inquiry. We are ready to help you optimize your assets.</p>
+      <a href="[INSERT_HOME_EQUITY_LINK_HERE]" class="btn btn-primary" id="equity-bottom-apply">Apply for Home Equity Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logo.png" alt="Demo Bank Footer Logo" class="footer-logo">
+          <p>Your trusted financial partner for residential mortgages, consumer lending, and asset management.</p>
+          <p style="font-size: 0.85rem;"><strong>Main Office:</strong><br>100 Financial Center Parkway, Suite 400<br>New York, NY 10005</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="#">Checking Accounts</a></li>
+            <li><a href="#">Savings Accounts</a></li>
+            <li><a href="mortgage.html">Mortgage Loans</a></li>
+            <li><a href="equity.html">Home Equity Lines</a></li>
+            <li><a href="#">Insurance Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="directory.html">Find a Loan Officer</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy & Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory & Contact</h4>
+          <p style="font-size: 0.85rem;"><strong>Customer Support:</strong><br>Phone: (800) 555-0199<br>Fax: (800) 555-0198<br>Email: customercare@demobank.com</p>
+          <p style="font-size: 0.85rem;"><strong>Routing Transitions:</strong><br>Routing No: 999999990<br>Account Query Dummy: 0000-0000-00</p>
+        </div>
+      </div>
+
+      <div class="footer-disclaimers">
+        Demo Bank is a fictional financial institution created for demonstration purposes only. Dummy accounts, routing numbers, and rates displayed do not correspond to active financial instruments. Equal Housing Lender. NMLS Registry License #987654. Subject to credit validation. FDIC Member.
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Demo Bank. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclosures</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
