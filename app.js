@@ -1,3 +1,44 @@
+(function() {
+  if (localStorage.getItem('demo_authorized') === 'true') {
+    document.documentElement.classList.add('authorized');
+    return;
+  }
+
+  // Inject password gate HTML/CSS elements
+  const gate = document.createElement('div');
+  gate.className = 'passgate-overlay';
+  gate.innerHTML = `
+    <div class="passgate-card">
+      <img src="logo.png" alt="Demo Bank" class="passgate-logo">
+      <h2 class="passgate-title">Demo Portal Access</h2>
+      <p class="passgate-subtitle">Please enter the security password to view the Demo Bank environment.</p>
+      <input type="password" id="passgate-pass" class="passgate-input" placeholder="Password" autofocus>
+      <button id="passgate-submit" class="passgate-btn">Verify Access</button>
+      <div id="passgate-err" class="passgate-error">Incorrect password. Please try again.</div>
+    </div>
+  `;
+  document.documentElement.appendChild(gate);
+
+  const submitPassword = () => {
+    const pass = document.getElementById('passgate-pass').value;
+    if (pass === 'demobank') {
+      localStorage.setItem('demo_authorized', 'true');
+      document.documentElement.classList.add('authorized');
+      gate.remove();
+    } else {
+      const err = document.getElementById('passgate-err');
+      err.style.display = 'block';
+      document.getElementById('passgate-pass').value = '';
+    }
+  };
+
+  // Attach verify actions
+  document.getElementById('passgate-submit').addEventListener('click', submitPassword);
+  document.getElementById('passgate-pass').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') submitPassword();
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- Mobile Drawer Implementation ---
   const menuToggle = document.querySelector('.menu-toggle');
